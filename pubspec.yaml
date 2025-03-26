@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.4.5
   google_fonts: ^6.2.1
 
 dev_dependencies:
@@ -18,3 +19,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - "assets/"
+    - "assets/images/"
+    - "assets/gif/"
