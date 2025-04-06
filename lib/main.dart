@@ -55,7 +55,7 @@ class MainApp extends StatelessWidget {
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
-          return MaterialApp(
+          return MaterialApp.router(
             title: "Tour De France",
             debugShowCheckedModeBanner: false,
             theme: theme.light(),
