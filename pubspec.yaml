@@ -14,6 +14,7 @@ dependencies:
   flutter_bloc: ^9.1.0
   flutter_dotenv: ^5.2.1
   flutter_launcher_icons: ^0.14.3
+  flutter_markdown: ^0.7.7
   flutter_native_splash: ^2.4.5
   fpdart: ^1.1.1
   go_router: ^14.8.1
@@ -35,3 +36,4 @@ flutter:
     - assets/
     - assets/images/
     - assets/gif/
+    - README.md
