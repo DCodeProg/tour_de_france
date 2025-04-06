@@ -6,6 +6,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:tour_de_france/core/router/app_router.dart';
 import 'package:tour_de_france/core/secrets/app_secrets.dart';
 import 'package:tour_de_france/core/shared/cubit/theme_cubit.dart';
 
@@ -60,6 +61,7 @@ class MainApp extends StatelessWidget {
             theme: theme.light(),
             darkTheme: theme.dark(),
             themeMode: themeMode,
+            routerConfig: appRouter,
           );
         },
       ),
