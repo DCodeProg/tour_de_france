@@ -9,6 +9,10 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:tour_de_france/core/router/app_router.dart';
 import 'package:tour_de_france/core/secrets/app_secrets.dart';
 import 'package:tour_de_france/core/shared/cubit/theme_cubit.dart';
+import 'package:tour_de_france/features/etapes/data/datasources/etapes_remote_datasource.dart';
+import 'package:tour_de_france/features/etapes/data/repositories/etapes_repository_impl.dart';
+import 'package:tour_de_france/features/etapes/domain/usecases/get_all_etapes.dart';
+import 'package:tour_de_france/features/etapes/presentation/bloc/etapes_bloc.dart';
 
 import 'core/theme/app_theme.dart';
 import 'core/theme/text_theme.dart';
@@ -52,6 +56,7 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => ThemeCubit()),
+        BlocProvider(create: (context) => EtapesBloc(GetAllEtapes(EtapesRepositoryImpl(EtapesRemoteDatasourceImpl(supabase))))..add(EtapesGetAllEtapesEvent())),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {

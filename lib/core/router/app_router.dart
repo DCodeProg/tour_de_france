@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tour_de_france/core/shared/pages/not_found_page.dart';
 import 'package:tour_de_france/core/shared/widgets/main_layout.dart';
+import 'package:tour_de_france/features/etapes/presentation/pages/etapes_page.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
@@ -24,7 +25,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/parcours',
-              builder: (context, state) => Placeholder(),
+              builder: (context, state) => EtapesPage(),
             ),
           ],
         ),
