@@ -17,7 +17,13 @@ class EtapesPage extends StatelessWidget {
           },
           icon: const Icon(Icons.add),
         ),
-        SizedBox(width: 8),
+        IconButton(
+          icon: const Icon(Icons.refresh),
+          onPressed: () {
+            context.read<EtapesBloc>().add(EtapesGetAllEtapesEvent());
+          },
+        ),
+        SizedBox(width: 24),
       ],),
       body: BlocBuilder<EtapesBloc, EtapesState>(
         builder: (context, state) {
