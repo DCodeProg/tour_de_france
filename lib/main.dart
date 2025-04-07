@@ -13,6 +13,10 @@ import 'package:tour_de_france/features/coureurs/data/datasources/coureurs_remot
 import 'package:tour_de_france/features/coureurs/data/repositories/coureurs_repository_impl.dart';
 import 'package:tour_de_france/features/coureurs/domain/usecases/get_all_coureurs.dart';
 import 'package:tour_de_france/features/coureurs/presentation/bloc/coureurs_bloc.dart';
+import 'package:tour_de_france/features/equipes/data/datasources/equipes_remote_datasource.dart';
+import 'package:tour_de_france/features/equipes/data/repositories/equipes_repository_impl.dart';
+import 'package:tour_de_france/features/equipes/domain/usecases/get_all_equipes.dart';
+import 'package:tour_de_france/features/equipes/presentation/bloc/equipes_bloc.dart';
 import 'package:tour_de_france/features/etapes/data/datasources/etapes_remote_datasource.dart';
 import 'package:tour_de_france/features/etapes/data/repositories/etapes_repository_impl.dart';
 import 'package:tour_de_france/features/etapes/domain/usecases/get_all_etapes.dart';
@@ -77,6 +81,14 @@ class MainApp extends StatelessWidget {
                   ),
                 ),
               )..add(CoureursGetAllCoureursEvent()),
+        ),
+        BlocProvider(
+          create:
+              (context) => EquipesBloc(
+                GetAllEquipes(
+                  EquipesRepositoryImpl(EquipesRemoteDataSourceImpl(supabase)),
+                ),
+              )..add(EquipesGetAllEquipesEvent()),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
