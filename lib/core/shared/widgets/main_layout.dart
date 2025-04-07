@@ -17,13 +17,11 @@ class MainLayout extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Divider(height: 1),
           Expanded(
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
                 NavigationRailWidget(navigationShell: navigationShell),
-                VerticalDivider(width: 1),
                 Expanded(child: navigationShell),
               ],
             ),

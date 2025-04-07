@@ -1,7 +1,9 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tour_de_france/core/shared/cubit/theme_cubit.dart';
 
 class NavigationRailWidget extends StatefulWidget {
   const NavigationRailWidget({super.key, required this.navigationShell});
@@ -72,6 +74,23 @@ class _NavigationRailTrailing extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          IconButton(
+            onPressed: () {
+              context.read<ThemeCubit>().toggleTheme();
+            },
+            icon: BlocBuilder<ThemeCubit, ThemeMode>(
+              builder: (context, themeMode) {
+                switch (themeMode) {
+                  case ThemeMode.light:
+                    return Icon(Icons.light_mode_outlined);
+                  case ThemeMode.dark:
+                    return Icon(Icons.dark_mode_outlined);
+                  case ThemeMode.system:
+                    return Icon(Icons.brightness_auto_outlined);
+                }
+              },
+            ),
+          ),
           IconButton(
             onPressed: () {},
             icon: Transform.rotate(
