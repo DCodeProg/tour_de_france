@@ -18,14 +18,14 @@ class CoureurCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Row(
-              spacing: 8,
+              spacing: 6,
               children: [
                 Icon(Icons.flag_outlined, size: 16),
                 Text("${coureur.nationalite}"),
               ],
             ),
             Row(
-              spacing: 8,
+              spacing: 6,
               children: [
                 Icon(Icons.cake, size: 16),
                 Text("${dateFormat.format(coureur.dateNaissance)}   ${AgeCalculator.age(coureur.dateNaissance).years} ans"),

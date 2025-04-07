@@ -24,23 +24,23 @@ class EtapeCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              spacing: 6,
               children: [
                 Icon(Icons.straighten, size: 16),
-                SizedBox(width: 4),
                 Text("${etape.distance}km"),
               ],
             ),
             Row(
+              spacing: 6,
               children: [
                 Icon(Icons.terrain, size: 16),
-                SizedBox(width: 4),
                 Text(etape.type),
               ],
             ),
             Row(
+              spacing: 6,
               children: [
                 Icon(Icons.location_on, size: 16),
-                SizedBox(width: 4),
                 Text("${etape.villeDepart} → ${etape.villeArrivee}"),
               ],
             ),
