@@ -35,11 +35,6 @@ class _NavigationRailWidgetState extends State<NavigationRailWidget> {
   List<NavigationRailDestination> get _getNavigationRailDestinations {
     return <NavigationRailDestination>[
       NavigationRailDestination(
-        icon: Icon(Icons.home_outlined),
-        selectedIcon: Icon(Icons.home),
-        label: Text("Accueil"),
-      ),
-      NavigationRailDestination(
         icon: Icon(Icons.route_outlined),
         selectedIcon: Icon(Icons.route),
         label: Text("Parcours"),
