@@ -12,8 +12,8 @@ class CoureurCard extends StatelessWidget {
     DateFormat dateFormat = DateFormat('dd/MM/yyyy');
     return Card(
       child: ListTile(
-        leading: CircleAvatar(radius: 30, child: Icon(Icons.person)),
-        title: Text("${coureur.prenom} ${coureur.nom}"),
+        leading: CircleAvatar(radius: 30, child: Icon(Icons.pedal_bike)),
+        title: Text("${coureur.nom}  ${coureur.prenom.substring(0, 1) + coureur.prenom.substring(1).toLowerCase()}"),
         subtitle: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

@@ -10,7 +10,7 @@ import 'package:tour_de_france/features/etapes/presentation/pages/etapes_page.da
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
   routes: [
-    GoRoute(path: '/', redirect: (context, state) => '/parcours'),
+    GoRoute(path: '/', redirect: (context, state) => '/parcours/etapes'),
     StatefulShellRoute.indexedStack(
       builder:
           (context, state, navigationShell) =>
@@ -19,7 +19,7 @@ final GoRouter appRouter = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: '/parcours',
+              path: '/parcours/etapes',
               builder: (context, state) => EtapesPage(),
             ),
           ],
@@ -44,7 +44,9 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/classements',
-              builder: (context, state) => Placeholder(),
+              builder:
+                  (context, state) =>
+                      Center(child: CircularProgressIndicator()),
             ),
           ],
         ),
