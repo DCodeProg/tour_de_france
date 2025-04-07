@@ -32,7 +32,6 @@ Utiliser un logiciel de conception *(par exemple : Looping)*
   - Lieu arrivé
   - Distance
   - Type
-- Maillots
 - Classement de l’étape
   - Temps individuels
   - Écarts
@@ -44,17 +43,17 @@ Utiliser un logiciel de conception *(par exemple : Looping)*
   - Écarts
   - Bonification
   - Pénalités
- Participants
-o Equipes
-o Coureurs
- Nom
- Prénom
- Age
- Pays
- Dossard
-o Abandons
- Etape
- Raison
+- Participants
+- Equipes
+- Coureurs
+  - Nom
+  - Prénom
+  - Age
+  - Pays
+  - Dossard
+- Abandons
+  - Etape
+  - Raison
 
 Règles
 Attribution des maillots : Le gagnant de l’étape antérieure, récupère le maillot jaune. Le coureur nommé le plus combatif sur l’étape antérieure récupère le maillot rouge.
@@ -98,12 +97,9 @@ Une équipe (id_equipe) appartient à un pays (code) (1,1) → (pays)
 ### 3. Élaborer le MCD
 
 #### a. Préciser les cardinalités pour les différentes associations
+![alt text](doc/images/cardinalites.png)
 
 #### b. Vérifier le modèle obtenu en appliquant les différentes règles de validation
-
-Unicité des identifiants :
-
-- Chaque entité possède un identifiant unique (ex. id pour coureurs, code pour pays).
 
 Respect des dépendances fonctionnelles :
 
@@ -120,6 +116,11 @@ Respect des cardinalités :
 - Une étape est toujours associée à une édition (annee).
 PHASE II : Création et importation des données du Tour de France 2022
 Lister l’ensemble des requêtes permettant de créer les tables avec les relations (le logiciel de conception (par exemple Looping) les génère automatiquement mais en SQL) des petites corrections de type doivent être faites pour les lancer sur SQLSERVER
+
+## Phase II : Création et importation des données du Tour de France 2022
+
+Lister l’ensemble des requêtes permettant de créer les tables avec les relations *(le logiciel de 
+conception (par exemple Looping) les génère automatiquement mais en SQL)*
 
 ```sql
 create table public.coureurs (
