@@ -18,8 +18,8 @@ class EtapeModel extends Etape {
       'type': type,
       'date': date.toIso8601String(),
       'distance': distance,
-      'vd': villeDepart,
-      'va': villeArrivee,
+      'ville_depart': villeDepart,
+      'ville_arrivee': villeArrivee,
     };
   }
 

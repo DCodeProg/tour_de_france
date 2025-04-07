@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:tour_de_france/features/etapes/domain/entities/etape.dart';
+import 'package:tour_de_france/features/etapes/presentation/bloc/etapes_bloc.dart';
 
 class EtapeCard extends StatelessWidget {
   final Etape etape;
@@ -32,10 +34,7 @@ class EtapeCard extends StatelessWidget {
             ),
             Row(
               spacing: 6,
-              children: [
-                Icon(Icons.terrain, size: 16),
-                Text(etape.type),
-              ],
+              children: [Icon(Icons.terrain, size: 16), Text(etape.type)],
             ),
             Row(
               spacing: 6,
@@ -46,7 +45,24 @@ class EtapeCard extends StatelessWidget {
             ),
           ],
         ),
-        trailing: IconButton(onPressed: () {}, icon: Icon(Icons.unfold_more)),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.edit_outlined)),
+            IconButton(
+              onPressed: () {
+                context.read<EtapesBloc>().add(
+                  EtapesRemoveEtapeEvent(
+                    annee: etape.annee,
+                    numero: etape.numero,
+                  ),
+                );
+                context.read()<EtapesBloc>().add(EtapesGetAllEtapesEvent());
+              },
+              icon: Icon(Icons.delete_outline),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -19,7 +19,9 @@ import 'package:tour_de_france/features/equipes/domain/usecases/get_all_equipes.
 import 'package:tour_de_france/features/equipes/presentation/bloc/equipes_bloc.dart';
 import 'package:tour_de_france/features/etapes/data/datasources/etapes_remote_datasource.dart';
 import 'package:tour_de_france/features/etapes/data/repositories/etapes_repository_impl.dart';
+import 'package:tour_de_france/features/etapes/domain/usecases/add_etape.dart';
 import 'package:tour_de_france/features/etapes/domain/usecases/get_all_etapes.dart';
+import 'package:tour_de_france/features/etapes/domain/usecases/remove_etape.dart';
 import 'package:tour_de_france/features/etapes/presentation/bloc/etapes_bloc.dart';
 
 import 'core/theme/app_theme.dart';
@@ -68,6 +70,12 @@ class MainApp extends StatelessWidget {
           create:
               (context) => EtapesBloc(
                 GetAllEtapes(
+                  EtapesRepositoryImpl(EtapesRemoteDatasourceImpl(supabase)),
+                ),
+                AddEtape(
+                  EtapesRepositoryImpl(EtapesRemoteDatasourceImpl(supabase)),
+                ),
+                RemoveEtape(
                   EtapesRepositoryImpl(EtapesRemoteDatasourceImpl(supabase)),
                 ),
               )..add(EtapesGetAllEtapesEvent()),

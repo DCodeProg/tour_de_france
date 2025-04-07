@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tour_de_france/features/etapes/presentation/bloc/etapes_bloc.dart';
 import 'package:tour_de_france/features/etapes/presentation/widgets/etape_card.dart';
 
@@ -9,7 +10,15 @@ class EtapesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Liste des étapes")),
+      appBar: AppBar(title: Text("Liste des étapes"), actions: [
+        IconButton(
+          onPressed: () {
+            context.go('/parcours/etapes/add');
+          },
+          icon: const Icon(Icons.add),
+        ),
+        SizedBox(width: 8),
+      ],),
       body: BlocBuilder<EtapesBloc, EtapesState>(
         builder: (context, state) {
           if (state is EtapesFailure) {

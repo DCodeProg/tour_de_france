@@ -20,3 +20,13 @@ class EtapesDisplaySucess extends EtapesState {
   final List<Etape> etapes;
   const EtapesDisplaySucess(this.etapes);
 }
+
+class EtapesAddEtapeSucess extends EtapesState {
+  final Etape etape;
+  const EtapesAddEtapeSucess(this.etape);
+}
+
+class EtapesRemoveEtapeSucess extends EtapesState {
+  final Etape etape;
+  const EtapesRemoveEtapeSucess(this.etape);
+}

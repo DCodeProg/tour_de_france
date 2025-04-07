@@ -5,6 +5,7 @@ import 'package:tour_de_france/core/shared/widgets/main_layout.dart';
 import 'package:tour_de_france/features/coureurs/presentation/pages/coureurs_page.dart';
 import 'package:tour_de_france/features/dossier_technique/pages/dossier_technique.dart';
 import 'package:tour_de_france/features/equipes/presentation/pages/equipes_page.dart';
+import 'package:tour_de_france/features/etapes/presentation/pages/add_new_etape_page.dart';
 import 'package:tour_de_france/features/etapes/presentation/pages/etapes_page.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -21,6 +22,10 @@ final GoRouter appRouter = GoRouter(
             GoRoute(
               path: '/parcours/etapes',
               builder: (context, state) => EtapesPage(),
+            ),
+            GoRoute(
+              path: '/parcours/etapes/add',
+              builder: (context, state) => AddNewEtapePage(),
             ),
           ],
         ),
