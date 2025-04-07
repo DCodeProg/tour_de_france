@@ -16,7 +16,7 @@ class EtapeModel extends Etape {
       'annee_edition': annee,
       'numero': numero,
       'type': type,
-      'date': date,
+      'date': date.toIso8601String(),
       'distance': distance,
       'vd': villeDepart,
       'va': villeArrivee,

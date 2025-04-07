@@ -1,4 +1,4 @@
-import 'package:fpdart/src/either.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:tour_de_france/core/errors/failures.dart';
 import 'package:tour_de_france/core/usecase/usecase.dart';
 import 'package:tour_de_france/features/etapes/domain/entities/etape.dart';
